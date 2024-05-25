@@ -4,11 +4,18 @@ var currentValue = null;
 
 async function updateLights(lightingPattern) {
   let value;
-  if (lightingPattern === "red") {
+  if (lightingPattern === "TOR-E") {
+    value = 10662071
+  }
+  else if (lightingPattern === "PDSTOR") {
+    value = 10658039
+  }
+  else if (lightingPattern === "TOR") {
     value = 10657707;
   }
-  else if (lightingPattern === "yellow") {
-    value = 10657698;
+  else if (lightingPattern === "SVR") {
+    //value = 10657698;
+    value = 10657889; // Turning off SVR lighting
   } else {
     value = 10657889; // Default to white
   }

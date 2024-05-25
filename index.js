@@ -19,4 +19,4 @@ async function run() {
 
 run();
 
-setInterval(run, 30000);
+setInterval(run, 15000);
