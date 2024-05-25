@@ -1,0 +1,11 @@
+{
+  "name": "weather-alerts",
+  "version": "1.0.0",
+  "description": "Weather alerts will trigger rgb light strip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Knudsen",
+  "license": "ISC"
+}
