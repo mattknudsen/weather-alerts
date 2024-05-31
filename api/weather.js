@@ -12,7 +12,7 @@ const getWeatherData = async () => {
     const data = response.data;
     console.log(data);
     const warnings = data.features.filter(feature => {
-      return feature.properties.event === 'Severe Thunderstorm Warning' || feature.properties.event === 'Tornado Warning';
+      return feature.properties.event === 'Severe Thunderstorm Warning' || feature.properties.event === 'Tornado Warning' || feature.properties.event === 'Special Weather Statement';
     });
 
     return warnings;

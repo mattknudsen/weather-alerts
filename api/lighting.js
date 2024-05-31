@@ -15,6 +15,9 @@ async function updateLights(lightingPattern) {
   }
   else if (lightingPattern === "SVR") {
     value = 10657698;
+  }
+  else if (lightingPattern === "SWS") {
+    value = 10713134;
   } else {
     value = 10657889; // Default to white
   }
