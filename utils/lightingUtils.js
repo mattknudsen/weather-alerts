@@ -6,7 +6,7 @@ var currentTOREmergencyIds = [];
 
 function determineLightingPattern(weatherData) {
     console.log(weatherData);
-    const SpecialWeatherStatements = weatherData.filter(warning => warning.properties.event === 'Special Weather Statement');
+    const SWS = weatherData.filter(warning => warning.properties.event === 'Special Weather Statement');
     const SVRWarnings = weatherData.filter(warning => warning.properties.event === 'Severe Thunderstorm Warning');
     const TORWarnings = weatherData.filter(warning => warning.properties.event === 'Tornado Warning');
     const PDSTORWarnings = weatherData.filter(warning => warning.properties.parameters.tornadoDamageThreat && warning.properties.parameters.tornadoDamageThreat[0] === 'CONSIDERABLE');
@@ -19,7 +19,7 @@ function determineLightingPattern(weatherData) {
     console.log("Current TOR-E Ids: ", currentTOREmergencyIds);
 
 
-    const newSWS = SpecialWeatherStatements.filter(warning => !currentSWSIds.includes(warning.id));
+    const newSWS = SWS.filter(warning => !currentSWSIds.includes(warning.id));
     const newSVRWarnings = SVRWarnings.filter(warning => !currentSVRWarningIds.includes(warning.id));
     const newTORWarnings = TORWarnings.filter(warning => !currentTORWarningIds.includes(warning.id));
     const newPDSTORWarnings = PDSTORWarnings.filter(warning => !currentPDSTORWarningIds.includes(warning.id));
@@ -32,7 +32,7 @@ function determineLightingPattern(weatherData) {
     console.log("New TOR-E", newTOREmergencies);
 
     if (newSWS.length > 0) {
-        currentSWSIds.push(...newSVRWarnings.map(warning => warning.id));
+        currentSWSIds.push(...newSWS.map(warning => warning.id));
     }
 
     if (newSVRWarnings.length > 0) {
