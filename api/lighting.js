@@ -14,8 +14,7 @@ async function updateLights(lightingPattern) {
     value = 10657707;
   }
   else if (lightingPattern === "SVR") {
-    //value = 10657698;
-    value = 10657889; // Turning off SVR lighting
+    value = 10657698;
   } else {
     value = 10657889; // Default to white
   }
