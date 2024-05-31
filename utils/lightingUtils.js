@@ -5,8 +5,8 @@ var currentTOREmergencyIds = [];
 
 function determineLightingPattern(weatherData) {
     console.log(weatherData);
-    const SVRWarnings = weatherData.filter(warning => warning.properties.event === 'Severe Thunderstorm Warning' && warning.properties.messageType !== 'Update');
-    const TORWarnings = weatherData.filter(warning => warning.properties.event === 'Tornado Warning' && warning.properties.messageType !== 'Update');
+    const SVRWarnings = weatherData.filter(warning => warning.properties.event === 'Severe Thunderstorm Warning');
+    const TORWarnings = weatherData.filter(warning => warning.properties.event === 'Tornado Warning');
     const PDSTORWarnings = weatherData.filter(warning => warning.properties.parameters.tornadoDamageThreat && warning.properties.parameters.tornadoDamageThreat[0] === 'CONSIDERABLE');
     const TOREmergency = weatherData.filter(warning => warning.properties.parameters.tornadoDamageThreat && warning.properties.parameters.tornadoDamageThreat[0] === 'CATASTROPHIC');
 
